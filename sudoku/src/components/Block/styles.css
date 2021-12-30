@@ -1,0 +1,11 @@
+.block {
+    border: 1px solid black;
+    background: rgb(223, 219, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.original-number {
+    font-weight: bold;
+}

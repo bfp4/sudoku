@@ -1,6 +1,15 @@
+import React from "react"
+
+import { BoardProvider } from "./Context/BoardContext";
+import Board from "./components/Board/Board"
+
 function App() {
   return (
-    <div>hello world</div>
+    <BoardProvider>
+      <div>
+        <Board />
+      </div>
+    </BoardProvider>
   );
 }
 

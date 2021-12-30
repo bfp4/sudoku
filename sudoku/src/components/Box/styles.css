@@ -1,0 +1,9 @@
+.box-grid {
+    width: 15vh;
+    height: 15vh;
+    display: grid;
+    grid-template-columns: repeat(3, 5vh);
+    grid-template-rows: repeat(3, 5vh);
+    grid-gap: 1px;
+    border: 2px solid black;
+}
