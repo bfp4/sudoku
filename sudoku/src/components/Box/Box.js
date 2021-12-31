@@ -5,6 +5,7 @@ import Block from "../Block/Block"
 
 export default function Box(props) {
     const { box, boxNumber } = props
+
     return (
         <div className='box-grid'>
             {

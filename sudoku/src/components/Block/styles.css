@@ -1,11 +1,27 @@
-.block {
+.number {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+
+    color: black;
     border: 1px solid black;
     background: rgb(223, 219, 219);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background .3s ease-out;
 }
 
-.original-number {
-    font-weight: bold;
+.og-number {
+  font-weight: bold;
+}
+
+.non-og-number:hover {
+    background: rgb(247, 245, 245);
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

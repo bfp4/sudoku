@@ -36,3 +36,4 @@ export function BoardProvider({children}){
         </BoardContext.Provider>
     )
 }
+
