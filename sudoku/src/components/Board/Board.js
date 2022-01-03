@@ -2,7 +2,7 @@ import React from 'react'
 import "./styles.css"
 import { useBoard } from "../../Context/BoardContext"
 
-import Box from "../Box/Box"
+import Block from '../Block/Block'
 
 export default function Board() {
     const board = useBoard().board
@@ -11,13 +11,16 @@ export default function Board() {
         <div className="board-grid">
             {
                 board.map((box, i) => {
-                    return (
-                        <Box 
-                            key={i}
-                            box={box}
-                            boxNumber={i}
-                        />
-                    )
+                    return box.map((block, j) => {
+                        return (
+                            <Block
+                                key={j}
+                                number={block}
+                                boxNumber={i}
+                                blockNumber={j}
+                            />
+                        )
+                    })
                 })
             }
         </div>

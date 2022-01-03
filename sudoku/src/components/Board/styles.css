@@ -2,6 +2,6 @@
     width: 45vh;
     height: 45vh;
     display: grid;
-    grid-template-columns: repeat(3, 15vh);
-    grid-template-rows: repeat(3, 15vh);
+    grid-template-columns: repeat(9, 5vh);
+    grid-template-rows: repeat(9, 5vh);
 }

@@ -21,6 +21,14 @@
     background: rgb(247, 245, 245);
 }
 
+.b-right {
+  border-right: 1px solid black
+}
+
+.b-bottom {
+  border-bottom: 1px solid black
+}
+
 .number::-webkit-outer-spin-button,
 .number::-webkit-inner-spin-button {
   -webkit-appearance: none;
