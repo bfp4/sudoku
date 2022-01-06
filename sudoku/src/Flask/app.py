@@ -1,22 +1,14 @@
-import requests
 from flask import Flask, request
+from python.solve import solver 
 
 app = Flask(__name__)
 app.secret_key = 'the random string'
 
-
-# @app.route("/board")
-# def board():
-#     res = requests.get("https://sugoku.herokuapp.com/board?difficulty=easy")
-#     data = res.json()
-#     board = data['board']
-
-#     return "cool"
-
-@app.route("/solve/<demo>")
-def solve(demo):
-    print(demo)
-    return {"data": demo}
+@app.route("/solve", methods=["POST"])
+def solve():
+    board = request.json
+    solved_board = solver(board)
+    return {"solvedBoard": solved_board}
 
 if __name__ == "__main__":
     app.run(debug=True)

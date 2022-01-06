@@ -6,7 +6,7 @@ import { useBoard } from '../../Context/BoardContext'
 export default function Block(props) {
     const [number, setNumber] = useState(props.number)
     let { boxNumber, blockNumber } = props
-    const { board, originalBoard } = useBoard()
+    const { board, originalBoardSlots } = useBoard()
     let numberInput;
     let border = ""
 
@@ -16,7 +16,7 @@ export default function Block(props) {
     if(boxNumber === 2 || boxNumber === 5)
         border += " b-bottom"
 
-    if(originalBoard[boxNumber][blockNumber]){
+    if(originalBoardSlots[boxNumber][blockNumber]){
         numberInput = (
             <input 
                 type="number"

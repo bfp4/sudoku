@@ -8,7 +8,18 @@ export function useBoard(){
 }
 
 export function BoardProvider({children}){
-    const [value, setValue] = useState()
+    // const [value, setValue] = useState()
+    let value;
+    const [board, setBoard] = useState()
+
+    const newBoard = newBoard => {
+        setBoard(newBoard)
+        value = {
+            ...value,
+            board: board
+        }
+        // setValue({board: newBoard, ...value})
+    }
 
     const getBoard = async () => {
         const response = await fetch("https://sugoku.herokuapp.com/board?difficulty=easy");
@@ -18,15 +29,23 @@ export function BoardProvider({children}){
     }
 
     useEffect(async () => {
-        const board = await getBoard()
-        const originalBoard = board.map(box => {
+        await setBoard(getBoard())
+        const originalBoardSlots = board.map(box => {
             return box.map(block => block != 0)
         })
 
-        await setValue({
+        // await setValue({
+        //     board: board, 
+        //     originalBoard: board,
+        //     originalBoardSlots: originalBoardSlots,
+        //     setBoard: setBoard
+        // })
+        value = {
             board: board, 
-            originalBoard: originalBoard
-        })
+            originalBoard: board,
+            originalBoardSlots: originalBoardSlots,
+            setBoard: newBoard
+        }
         return value
     }, [])
 
