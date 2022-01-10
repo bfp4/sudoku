@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { useBoard } from '../../Context/BoardContext'
+import { useBoard, useDispatch } from '../../Context/Context'
 
 export default function SolveButton() {
-    const [solve, setSolve] = useState(false)
-    let { board, originalBoard, setBoard } = useBoard()
+    const { originalBoard, isSolved } = useBoard()
+    const dispatch = useDispatch()
 
     const handleClick = async () => {
         const response = await fetch(`solve`, {
@@ -15,11 +14,16 @@ export default function SolveButton() {
         })
         const data = await response.json()
         const solvedBoard = await data.solvedBoard
-        await setBoard(solvedBoard)
+        dispatch({
+            type: "set-solved", 
+            payload: {
+                solvedBoard: solvedBoard
+            }
+        })
     }
 
     return (
-        <button onClick={handleClick}>
+        <button onClick={!isSolved ? handleClick : null}>
             Solve
         </button>
     )
