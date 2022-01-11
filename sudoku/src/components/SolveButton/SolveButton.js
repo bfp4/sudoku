@@ -1,10 +1,15 @@
 import { useBoard, useDispatch } from '../../Context/Context'
 
 export default function SolveButton() {
-    const { originalBoard, isSolved } = useBoard()
+    const { board, originalBoardSlots, isSolved } = useBoard()
     const dispatch = useDispatch()
 
     const handleClick = async () => {
+        const originalBoard = board.map((box, i) => {
+            return box.map((block, j) => {
+                return originalBoardSlots[i][j] ? block : 0 
+            })
+        })
         const response = await fetch(`solve`, {
             method: "POST",
             headers: {

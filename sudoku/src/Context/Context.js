@@ -15,7 +15,6 @@ export function useDispatch(){
 
 const intialState = {
     board: [], 
-    originalBoard: [],
     originalBoardSlots: [],
     isSolved: false,
     isLoaded: false

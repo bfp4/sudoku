@@ -1,10 +1,9 @@
 export default function reducer(state, action){
     switch(action.type){
         case "get-board":
-            const { board, originalBoard, originalBoardSlots } = action.payload
+            const { board, originalBoardSlots } = action.payload
             return {
                 board: board,
-                originalBoard: originalBoard,
                 originalBoardSlots: originalBoardSlots,
                 isSolved: false,
                 isLoaded: true
