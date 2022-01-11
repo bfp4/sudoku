@@ -3,22 +3,31 @@ export default function reducer(state, action){
         case "get-board":
             const { board, originalBoard, originalBoardSlots } = action.payload
             return {
-                ...state,
                 board: board,
                 originalBoard: originalBoard,
                 originalBoardSlots: originalBoardSlots,
+                isSolved: false,
                 isLoaded: true
             }
         case "set-number-slot":
             const { boxNumber, blockNumber, number } = action.payload
             state.board[boxNumber][blockNumber] = number
-            return state
+            const newBoard = state.board
+            return {
+                ...state,
+                board: newBoard
+            }
         case "set-solved":
             const { solvedBoard } = action.payload
             return {
                 ...state,
                 board: solvedBoard,
                 isSolved: true
+            }
+        case "loading":
+            return {
+                ...state,
+                isLoaded: false
             }
         default:
             return {...state, board: "butt"}
