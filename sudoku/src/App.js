@@ -1,4 +1,5 @@
 import React from "react"
+import "./styles.css"
 
 import { BoardProvider } from "./Context/Context";
 import Board from "./components/Board/Board"
@@ -7,11 +8,15 @@ import ResetButton from "./components/ResetButton/ResetButton";
 
 function App() {
   return (
-    <BoardProvider>
-        <Board />
-        <SolveButton />
-        <ResetButton />
-    </BoardProvider>
+    <div className="app">
+      <BoardProvider>
+          <Board />
+          <div className="buttons-container">
+            <SolveButton />
+            <ResetButton />
+          </div>
+      </BoardProvider>
+    </div>
   );
 }
 

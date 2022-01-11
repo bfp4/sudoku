@@ -7,7 +7,7 @@ export default function SolveButton() {
     const handleClick = async () => {
         const originalBoard = board.map((box, i) => {
             return box.map((block, j) => {
-                return originalBoardSlots[i][j] ? block : 0 
+                return originalBoardSlots[i][j] ? block : 0
             })
         })
         const response = await fetch(`solve`, {
@@ -28,7 +28,7 @@ export default function SolveButton() {
     }
 
     return (
-        <button onClick={!isSolved ? handleClick : null}>
+        <button className="button" onClick={!isSolved ? handleClick : null}>
             Solve
         </button>
     )

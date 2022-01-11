@@ -1,5 +1,5 @@
 export default async function getBoard(){
-    const response = await fetch("https://sugoku.herokuapp.com/board?difficulty=easy");
+    const response = await fetch("https://sugoku.herokuapp.com/board?difficulty=random");
     const data = await response.json();
     const board = await data.board
     const originalBoardSlots = await board.map(box => {

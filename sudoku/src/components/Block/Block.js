@@ -25,6 +25,7 @@ export default function Block(props) {
                 value={number}
                 min="0"
                 max="9"
+                id={`${boxNumber},${blockNumber}`}
                 disabled
             />
         )
@@ -36,6 +37,7 @@ export default function Block(props) {
                 value={number !== 0 ? number : ""} 
                 min="0"
                 max="9"
+                id={`${boxNumber},${blockNumber}`}
                 onChange={(e) => handleChange(e)}
                 disabled={isSolved}
             />

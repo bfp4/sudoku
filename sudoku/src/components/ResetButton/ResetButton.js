@@ -16,7 +16,7 @@ export default function ResetButton() {
     }
 
     return (
-        <button onClick={handleReset}>
+        <button className="button" onClick={handleReset}>
             Reset
         </button>
     )

@@ -1,0 +1,22 @@
+.app {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons-container {
+    width: 54vh;
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    padding-top: 3px;
+}
+
+.button {
+    width: 20%;
+    cursor: pointer;
+    background-color: rgb(223, 219, 219);
+    border: 1px solid black;
+}
