@@ -11,7 +11,7 @@ export default function Block(props) {
     let border = ""
 
     
-    if(blockNumber === 2 || blockNumber == 5)
+    if(blockNumber === 2 || blockNumber === 5)
         border += " b-right"
     if(boxNumber === 2 || boxNumber === 5)
         border += " b-bottom"
