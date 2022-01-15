@@ -1,7 +1,8 @@
 .board-grid {
-    width: 45vh;
-    height: 45vh;
+    width: 54vh;
+    height: 54vh;
     display: grid;
-    grid-template-columns: repeat(9, 5vh);
-    grid-template-rows: repeat(9, 5vh);
+    grid-template-columns: repeat(9, 6vh);
+    grid-template-rows: repeat(9, 6vh);
+    border: 1px solid black;
 }
